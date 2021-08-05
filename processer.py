@@ -40,12 +40,12 @@ def _clamp(v, r1, r2=None) -> float:
 def humanize_message(message, humanize_data: dict) -> None:
 	if message.base_message.type in ["note_on", "note_off"]:
 
-		message.absolute_time += random.randint(-humanize_data["velocity_offset_range"], humanize_data["velocity_offset_range"])
+		message.absolute_time += random.randint(-humanize_data["timing_offset_range"], humanize_data["timing_offset_range"])
 		if message.absolute_time < 0: message.absolute_time = 0
 
 		if message.base_message.velocity != 0:
-			message.base_message.velocity += random.randint(-humanize_data["timing_offset_range"], humanize_data["timing_offset_range"])
-			message.base_message.velocity = _clamp(message.base_message.velocity, 1, 127)
+			new_velocity = message.base_message.velocity + random.randint(-humanize_data["velocity_offset_range"], humanize_data["velocity_offset_range"])
+			message.base_message.velocity = _clamp(new_velocity, 1, 127)
 
 # takes message and creates an expression from the velocity
 def create_expression_from_message(message): # returns mido expression message or None

@@ -46,13 +46,13 @@ class App(tk.Tk):
 
 		self.timing_offset_range_label = tk.Label(text="Timing Offset Range")
 		self.timing_offset_range_label.grid(row=2, column=0)
-		self.timing_offset_range_slider = tk.Scale(to=50, orient="horizontal")
+		self.timing_offset_range_slider = tk.Scale(to=10, orient="horizontal")
 		self.timing_offset_range_slider.grid(row=2, column=1)
 		self.timing_offset_range_slider_tooltip = tooltip.CreateToolTip(self.timing_offset_range_slider, "Randomly add delay or predelay to a note to make it sound more human.")
 
 		self.velocity_offset_range_label = tk.Label(text="Velocity Offset Range")
 		self.velocity_offset_range_label.grid(row=3, column=0)
-		self.velocity_offset_range_slider = tk.Scale(to=50, orient="horizontal")
+		self.velocity_offset_range_slider = tk.Scale(to=10, orient="horizontal")
 		self.velocity_offset_range_slider.grid(row=3, column=1)
 		self.velocity_offset_range_slider_tooltip = tooltip.CreateToolTip(self.velocity_offset_range_slider, "Randomly adjust velocity of a note to make it sound more human.")
 
