@@ -71,7 +71,7 @@ def process_midi(input_file: str, track_index: int, humanize_data: dict, convert
 	messages = []
 
 	if len(input_midi.tracks) >= track_index:
-		selected_track = input_midi.tracks[track_index]\
+		selected_track = input_midi.tracks[track_index]
 
 		for i, msg in enumerate(selected_track):
 
